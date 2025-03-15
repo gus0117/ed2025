@@ -10,7 +10,7 @@ struct tracional{
 void CrearRacional(tracional &r, int numerador, int denominador){
     if(denominador == 0){
         cout << "Error: denominador no puede ser 0" << endl;
-        return;
+        return; // Salir de la función
     }
     r.numerador = numerador;
     r.denominador = denominador;
