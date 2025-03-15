@@ -31,6 +31,23 @@ void MostrarRacional(tracional r){
 }
 
 int main(){
+    tracional r1, r2, r3;
+    CrearRacional(r1, 1, 2);
+    CrearRacional(r2, 2, 3);
+
+    cout << "Racional 1: ";
+    MostrarRacional(r1);
+
+    cout << "Racional 2: ";
+    MostrarRacional(r2);
+
+    Sumar(r1, r2, r3);
+    cout << "Suma r1 + r2: ";
+    MostrarRacional(r3);
+
+    Producto(r1, r2, r3);
+    cout << "Producto r1 * r2: ";
+    MostrarRacional(r3);
     
     return 0;
 }
