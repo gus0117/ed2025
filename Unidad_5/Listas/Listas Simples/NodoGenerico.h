@@ -15,9 +15,13 @@ public:
 		dato = p;
 		siguiente = n;
 	}
-	T datoNodo() const
+	T getDato() const
 	{
 		return dato;
+	}
+	void setDato(T d)
+	{
+		this->dato = d;
 	}
 	NodoGenerico<T>* getSiguiente() const
 	{

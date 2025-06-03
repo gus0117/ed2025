@@ -1,0 +1,106 @@
+public class Nodo<T>
+{
+    private T dato;
+    private Nodo<T> siguiente;
+    public Nodo(T dato)
+    {
+        this.dato = dato;
+        this.siguiente = null;
+    }
+    public Nodo(T dato, Nodo<T> siguiente)
+    {
+        this.dato = dato;
+        this.siguiente = siguiente;
+    }
+
+    public T GetDato()
+    {
+        return dato;
+    }
+
+    public void SetDato(T dato)
+    {
+        this.dato = dato;
+    }
+
+    public Nodo<T> GetSiguiente()
+    {
+        return siguiente;
+    }
+
+    public void SetSiguiente(Nodo<T> siguiente)
+    {
+        this.siguiente = siguiente;
+    }
+}
+
+public class Lista<T>
+{
+    private Nodo<T> head;
+
+    public Lista()
+    {
+        head = null;
+    }
+
+    public void Agregar(T dato)
+    {
+        Nodo<T> nuevoNodo = new Nodo<T>(dato);
+        if (head == null)
+        {
+            head = nuevoNodo;
+        }
+        else
+        {
+            Nodo<T> actual = head;
+            while (actual.GetSiguiente() != null)
+            {
+                actual = actual.GetSiguiente();
+            }
+            actual.SetSiguiente(nuevoNodo);
+        }
+    }
+
+    public bool isEmpty()
+    {
+        return head == null;
+    }
+
+    public void Imprimir()
+    {
+        if (isEmpty())
+        {
+            Console.WriteLine("La lista está vacía.");
+        }
+        else
+        {
+            Nodo<T> actual = head;
+            while (actual != null)
+            {
+                Console.Write(actual.GetDato() + " ");
+                actual = actual.GetSiguiente();
+            }
+        }
+    }
+
+}
+
+Lista<int> lista = new Lista<int>();
+lista.Agregar(1);
+lista.Agregar(2);
+lista.Agregar(3);
+lista.Imprimir(); // Salida: 1 2 3
+
+/*
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Lista<int> lista = new Lista<int>();
+        lista.Agregar(1);
+        lista.Agregar(2);
+        lista.Agregar(3);
+        lista.Imprimir(); // Salida: 1 2 3
+    }
+}
+*/

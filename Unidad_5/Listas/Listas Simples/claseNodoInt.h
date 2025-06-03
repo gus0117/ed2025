@@ -6,29 +6,29 @@ class Nodo
 {
 protected:
     Dato dato;
-    Nodo* enlace;
+    Nodo* siguiente;
 public:
     Nodo(Dato t)
     {
         dato = t;
-        enlace = nullptr; // 0 es el puntero NULL en C++
+        siguiente = nullptr; // 0 es el puntero NULL en C++
     }
     Nodo(Dato p, Nodo* n) // crea el nodo y lo enlaza a n
     {
         dato = p;
-        enlace = n;
+        siguiente = n;
     }
-    Dato datoNodo() const
+    Dato getDato() const
     {
         return dato;
     }
-    Nodo* enlaceNodo() const
+    Nodo* getSiguiente() const
     {
-        return enlace;
+        return siguiente;
     }
-    void ponerEnlace(Nodo* sgte)
+    void setSiguiente(Nodo* sgte)
     {
-        enlace = sgte;
+        siguiente = sgte;
     }
 };
 #endif
