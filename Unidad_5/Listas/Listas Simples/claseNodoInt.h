@@ -4,7 +4,7 @@ typedef int Dato;
 #define _NODO_H
 class Nodo
 {
-protected:
+private:
     Dato dato;
     Nodo* siguiente;
 public:
