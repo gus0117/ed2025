@@ -102,6 +102,61 @@ public:
 			}
 		}
 	}
+		
+	Nodo* EliminarInicio(){
+		Nodo* borrado;
+		if(inicio == nullptr){
+			borrado = nullptr;
+		}
+		else{
+			borrado = inicio;
+			inicio = inicio->getSiguiente();
+			borrado->setSiguiente(nullptr);
+		}
+		return borrado;
+	}
+		
+	Nodo* EliminarFinal(){
+		Nodo* borrado;
+		if(inicio == nullptr){
+			borrado = nullptr;
+		}
+		else{
+			if(inicio->getSiguiente() == nullptr){
+				borrado = inicio;
+				inicio = nullptr;
+			}
+			else{
+				Nodo* i = inicio;
+				while(i->getSiguiente()->getSiguiente() != nullptr){
+					i = i->getSiguiente();
+				}
+				borrado = i->getSiguiente();
+				i->setSiguiente(nullptr);
+			}
+		}
+		return borrado;
+	}
+		
+	Nodo* EliminarNodo(int valor){
+		Nodo* borrado;
+		if(inicio == nullptr)
+			borrado = nullptr;
+		else{
+			if(valor == inicio->getDato()){
+				borrado = EliminarInicio();
+			}
+			else{
+				Nodo* i = inicio;
+				while(i->getSiguiente() != nullptr && i->getSiguiente()->getDato() != valor){
+					i = i->getSiguiente();
+				}
+				borrado = i->getSiguiente();
+				i->setSiguiente(borrado->getSiguiente());
+				borrado->setSiguiente(nullptr);
+			}
+		}
+	}
 };
 
 int main() {
@@ -113,6 +168,11 @@ int main() {
 	lista.AgregarOrdenado(nuevo);
 	lista.AgregarOrdenado(nuevo2);
 	lista.AgregarOrdenado(nuevo3);
+	
+	lista.MostrarLista();
+	cout << endl;
+	lista.EliminarNodo(4);
+		
 	lista.MostrarLista();
 	return 0;
 }
