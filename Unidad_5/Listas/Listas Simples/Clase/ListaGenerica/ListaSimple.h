@@ -1,7 +1,7 @@
 #ifndef LISTA_H
 #define LISTA_H
 #include<bits/stdc++.h>
-#include "ListaSimple.h"
+#include "Nodo.h"
 using namespace std;
 
 template<typename T>
@@ -113,7 +113,7 @@ public:
 		return borrado;
 	}
 
-	Nodo<T>* EliminarNodo(int valor){
+	Nodo<T>* EliminarNodo(T valor){
 		Nodo<T>* borrado;
 		if(inicio == nullptr)
 			borrado = nullptr;

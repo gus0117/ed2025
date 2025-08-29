@@ -10,7 +10,7 @@ public:
 		this->dato = dato;
 		this->sig = nullptr;
 	}
-	
+
 	void crearNodo(){
 		cout << "Ingrese valor: ";
 		cin >> dato;
@@ -18,7 +18,7 @@ public:
 	void setDato(int valor){
 		dato = valor;
 	}
-		
+
 	int getDato(){
 		return dato;
 	}
@@ -39,11 +39,11 @@ public:
 		inicio = nullptr;
 		cant = 0;
 	}
-	
+
 	bool estaVacia(){
 		return inicio == nullptr;
 	}
-	
+
 	void AgregarInicio(Nodo* nuevo){
 		if(estaVacia()){
 			inicio = nuevo;
@@ -54,7 +54,7 @@ public:
 		}
 		cant++;
 	}
-	
+
 	void AgregarFinal(Nodo* nuevo){
 		if(estaVacia()){
 			inicio = nuevo;
@@ -68,7 +68,7 @@ public:
 		}
 		cant++;
 	}
-		
+
 	void AgregarOrdenado(Nodo* nuevo){
 		if(estaVacia()){
 			inicio = nuevo;
@@ -89,7 +89,7 @@ public:
 		}
 		cant++;
 	}
-		
+
 	void MostrarLista(){
 		if(estaVacia()){
 			cout << "Lista vacia" << endl;
@@ -102,7 +102,7 @@ public:
 			}
 		}
 	}
-		
+
 	Nodo* EliminarInicio(){
 		Nodo* borrado;
 		if(inicio == nullptr){
@@ -115,7 +115,7 @@ public:
 		}
 		return borrado;
 	}
-		
+
 	Nodo* EliminarFinal(){
 		Nodo* borrado;
 		if(inicio == nullptr){
@@ -137,7 +137,7 @@ public:
 		}
 		return borrado;
 	}
-		
+
 	Nodo* EliminarNodo(int valor){
 		Nodo* borrado;
 		if(inicio == nullptr)
@@ -157,6 +157,10 @@ public:
 			}
 		}
 	}
+
+    Nodo* getInicio(){
+        return inicio;
+    }
 };
 
 int main() {
@@ -168,12 +172,10 @@ int main() {
 	lista.AgregarOrdenado(nuevo);
 	lista.AgregarOrdenado(nuevo2);
 	lista.AgregarOrdenado(nuevo3);
-	
+
 	lista.MostrarLista();
 	cout << endl;
 	lista.EliminarNodo(4);
-		
-	lista.MostrarLista();
 	return 0;
 }
 

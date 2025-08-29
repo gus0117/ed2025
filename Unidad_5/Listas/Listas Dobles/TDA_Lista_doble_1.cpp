@@ -153,30 +153,29 @@ void MostrarLista(pnodo inicio)
     }
 }
 
-void obtenerBinario(int num){
-    int resto;
+void obtenerBinario(int a){
+    int r;
     pnodo inicio;
     IniciarLista(inicio);
 
     pnodo nuevo;
-    while(num > 0){
-        resto = num % 2;
-        CrearNodo(nuevo, resto);
+    while(a > 0){
+        r = a % 2;
+        CrearNodo(nuevo, r);
         AgregarInicio(inicio, nuevo);
-        num = num / 2;
+        a = a / 2;
     }
     for(pnodo i=inicio; i != NULL; i=i->sig){
         cout << i->dato;
     }
     cout<<endl;
-
 }
 
 main()
 {
     pnodo inicio, nuevo;
     IniciarLista(inicio);
-    obtenerBinario(24);
+    obtenerBinario(10);
     /*
     for(int i = 1; i <= 3; i++){
         CrearNodo(nuevo, i);
